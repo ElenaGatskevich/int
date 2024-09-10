@@ -7,7 +7,8 @@ window.addEventListener('scroll', function () {
                element.classList.add("header_fixed");
            });
 
-        } else {
+        }
+       if(window.scrollY < 1) {
            header.forEach(element=>{
                element.classList.remove("header_fixed");
            });
@@ -18,11 +19,11 @@ const headerMobile =document.querySelectorAll(".header__mobile");
 window.addEventListener('scroll', function () {
 
     if (window.scrollY > 104) {
-        headerMobile.forEach(element=>{
+        headerMobile.forEach(element => {
             element.classList.add("header_fixed");
         });
-
-    } else {
+    }
+        if (window.scrollY <1) {
         headerMobile.forEach(element=>{
             element.classList.remove("header_fixed");
         });
@@ -62,7 +63,7 @@ const burgerOpen=document.querySelectorAll(".burger__open");
 burgerOpen.forEach(item=>{
     item.addEventListener('click',function () {
         item.closest('.header__middle').classList.add('open');
-
+        item.closest('.header__mobile').classList.add('open');
     });
 });
 
@@ -84,13 +85,20 @@ menuClose.forEach(item=>{
 
     });
 });
-
+function close(item) {
+    item.closest('.header__middle').classList.remove('open');
+    item.closest('.header__middle').classList.remove('close');
+    item.closest('.header__mobile').classList.remove('open');
+}
 
 const burgerClose=document.querySelectorAll(".burger__close");
 burgerClose.forEach(item=>{
     item.addEventListener('click',function () {
-        item.closest('.header__middle').classList.remove('open');
 
+
+        item.closest('.header__middle').classList.add('close');
+      //  setTimeout(item.closest('.header__middle').classList.remove('close'),3000);
+        setTimeout(close,300,item);
     });
 });
 
@@ -218,19 +226,44 @@ if(tabsParrent) {
         }
     });
 }
-if (document.documentElement.clientWidth < 769) {
-    const cost=document.querySelectorAll(".cost__name");
-    cost.forEach(item=>{
-        item.addEventListener('click',function () {
-            item.closest('.tabcontent__row').classList.toggle('open');
+
+    if (document.documentElement.clientWidth < 769) {
+        const cost=document.querySelectorAll(".cost__name");
+        cost.forEach(item=>{
+            item.addEventListener('click',function () {
+                item.closest('.tabcontent__row').classList.toggle('open');
+            });
         });
+    }
+
+
+
+const realInput = document.querySelectorAll('input[type="file"]');
+realInput.forEach(item=>{
+    item.addEventListener('change',function () {
+        const fileName = item.value.split('\\').pop();
+
+        if(fileName) {
+            item.closest('.form__file').classList.add('form__file_active');
+        }
+        else{
+            item.closest('.form__file').classList.remove('form__file_active');
+        }
+        const span=item.closest('.form__file').querySelectorAll('.file__text');
+
+        span.forEach(e=>{
+            e.textContent=fileName || 'Ваш макет';
+        });
+
     });
-}
+});
 
 
 document.addEventListener("DOMContentLoaded", (function () {
 
         Fancybox.bind("[data-fancybox]");
+
+        new WOW().init();
 
         new Swiper(".clients__slider", {
 
@@ -322,9 +355,10 @@ document.addEventListener("DOMContentLoaded", (function () {
         });
         new Swiper(".reviews__slider", {
 
-            loop: false,
+            loop: true,
             spaceBetween:12,
             slidesPerView: 3,
+
             navigation: {
                 nextEl: '.swiper__next',
                 prevEl: '.swiper__prev',
@@ -333,6 +367,17 @@ document.addEventListener("DOMContentLoaded", (function () {
                 el: '.swiper__pagination',
                 clickable: true,
             },
+            breakpoints: {
+                0:{
+                    slidesPerView: 1,
+                },
+                480:{
+                    slidesPerView: 2,
+                },
+                1100:{
+                    slidesPerView: 3,
+                }
+            }
 
 
 
