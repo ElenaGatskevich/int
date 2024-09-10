@@ -257,7 +257,12 @@ realInput.forEach(item=>{
 
     });
 });
-
+const filter=document.querySelectorAll('.filter__name');
+filter.forEach(item=>{
+    item.addEventListener('click',function () {
+        item.closest('.filter__item').classList.toggle('open');
+    });
+});
 
 document.addEventListener("DOMContentLoaded", (function () {
 
