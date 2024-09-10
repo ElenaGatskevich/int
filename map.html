@@ -120,7 +120,8 @@
                     </li>
                     <li class="main-menu__item main-menu__item_parent">
                         <a href="#" class="main-menu__link">Полиграфические услуги</a>
-                        <div class="main-menu__wrap container">
+                        <div class="main-menu__wrap ">
+                            <div class="container">
                             <ul class="main-menu__child-menu child-menu">
                                 <li class="child-menu__item child-menu__item_parent"><a href="#" class="child-menu__link"><span class="shild-menu__icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -284,6 +285,7 @@
 </svg>
 </span>Сертификация</a> </li>
                             </ul>
+                            </div>
                         </div>
                     </li>
                     <li class="main-menu__item">
@@ -679,7 +681,7 @@
 
 <div class="page">
     <div class="container">
-        <div>Нет ховеров, модалки не доделаны, большой слайдер не додлеан, футер не проверен, меню в футере, анимация? input file не сделан, на главной на мобилке скрыть часть текста, фильтр на мобилке, сортировка select, хлебные крошки, маска для телефонов</div>
+        <div>Нет ховеров, большой слайдер не додлеан, футер не проверен, меню в футере, анимация? input file не сделан, на главной на мобилке скрыть часть текста, фильтр на мобилке, хлебные крошки, маска для телефонов</div>
 
         <ul>
             <li>
@@ -743,10 +745,13 @@
                 <a href="equipment_sales.html">Продажа оборудования</a>
             </li>
             <li>
-                <a href="operational_printing_in_moscow.html">Оперативная печать в Москве (не проверена, без адаптива)</a>
+                <a href="operational_printing_in_moscow.html">Оперативная печать в Москве</a>
             </li>
             <li>
-                <a href="printing_services.html">Полиграфические услуги в Москве (не проверена, без адаптива)</a>
+                <a href="printing_services.html">Полиграфические услуги в Москве</a>
+            </li>
+            <li>
+                <a href="modals.html">Модалки</a>
             </li>
         </ul>
     </div>
@@ -798,9 +803,9 @@
         </div>
         <div class="footer__menu ">
             <ul class="bottom-menu">
-                <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">Главная</a> </li>
-                <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">Услуги</a> </li>
-                <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">Цены</a> </li>
+                <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">Полиграфические услуги</a> </li>
+                <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">Продажа оборудования</a> </li>
+                <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">Сервис</a> </li>
                 <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">Акции</a> </li>
                 <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">О нас</a> </li>
                 <li class="bottom-menu__item"><a href="#" class="bottom-menu__link">Контакты</a> </li>
@@ -900,8 +905,8 @@
         </div>
         <div class="footer__contact">
             <div class="footer__buttons">
-                <button class="button button_footer">Получить консультацию бесплатно</button>
-                <button class="footer__call">Обратный звонок</button>
+                <button class="button button_footer" data-fancybox  data-src="#form__cons">Получить консультацию бесплатно</button>
+                <button class="footer__call" data-fancybox  data-src="#form__call">Обратный звонок</button>
             </div>
             <div class="footer__cart">
                 <img src="assets/img/cart.png" alt="cart" width="355" height="32">
@@ -925,10 +930,33 @@
             <input name="name" id="name" type="text" value="">
         </div>
         <label class="form__agree">
-            <input type="checkbox" name="agree">
+            <input type="checkbox" name="agree" checked>
             <span>Я даю свое согласие на <a href="#">Обработку моих персональных данных в соответствии с Федеральным законом РФ №152-ФЗ от 27.07.2006</a></span>
         </label>
         <button type="submit" class="button button_form">Перезвонить мне</button>
+    </form>
+</div>
+<div class="modal modal_cons" id="form__cons">
+    <h3 class="modal__title modal__title_center">Получить консультацию бесплатно</h3>
+
+    <form class="form">
+        <div class="form__wrap">
+            <label for="phone__cons">Телефон</label>
+            <input name="phone" id="phone__cons" type="tel" value="">
+        </div>
+        <div class="form__wrap">
+            <label for="email__cons">E-mail</label>
+            <input name="phone" id="email__cons" type="email" value="">
+        </div>
+        <div class="form__wrap">
+            <label for="name__cons">Имя</label>
+            <input name="name" id="name__cons" type="text" value="">
+        </div>
+        <label class="form__agree">
+            <input type="checkbox" name="agree" checked>
+            <span>Я даю свое согласие на <a href="#">Обработку моих персональных данных в соответствии с Федеральным законом РФ №152-ФЗ от 27.07.2006</a></span>
+        </label>
+        <button type="submit" class="button button_form">Получить консультацию бесплатно</button>
     </form>
 </div>
 <script src="assets/js/scripts.js"></script>
