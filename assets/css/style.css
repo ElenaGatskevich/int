@@ -476,7 +476,7 @@ padding: 11px 0;
     justify-content: flex-end;
 }
 .top__search.active{
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-name: slidein;
 }
 @keyframes slidein {
@@ -529,7 +529,7 @@ padding: 11px 0;
 }
 .top__search.active .search__input{
 
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-name: slidein2;
 }
 @keyframes slidein2 {
