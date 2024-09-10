@@ -3333,7 +3333,7 @@ color: var(--dark-blue_color);
     position: relative;
 }
 .item__img{
-    max-height: 272px;
+    max-height: 68%;
 }
 .back .item__name{
     color: #fff;
