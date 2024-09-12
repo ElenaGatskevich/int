@@ -3052,7 +3052,7 @@ html.with-fancybox body.hide-scrollbar{
     transition: transform 800ms ease;
 }
 .brand__item:hover img{
-    transform: scale(1.2);
+    transform: scale(1.1);
 
 
 
