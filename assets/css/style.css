@@ -3373,6 +3373,9 @@ margin: 12px 24px;
     filter: none;
     opacity: 1;
 }
+.child-info__link{
+    transition: 150ms linear;
+}
 .child-info__link:hover{
     color: var(--dark-blue_color);
 }
