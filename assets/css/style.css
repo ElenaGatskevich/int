@@ -3373,6 +3373,9 @@ margin: 12px 24px;
     filter: none;
     opacity: 1;
 }
+.child-info__link:hover{
+    color: var(--dark-blue_color);
+}
 @media (max-width:1280px) {
     .product__left{
         max-width: 50%;
