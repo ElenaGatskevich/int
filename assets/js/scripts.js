@@ -39,6 +39,9 @@ search.forEach(item=>{
     item.addEventListener('focusout',function () {
         item.value='';
         item.closest('.search').classList.remove('active');
+        if (item.closest('.header__middle')) {
+            item.closest('.header__middle').classList.remove('active');
+        }
     });
 });
 
@@ -46,6 +49,7 @@ const searchMobileOpen=document.querySelectorAll(".search__button_mobile");
 searchMobileOpen.forEach(item=>{
     item.addEventListener('click',function () {
         item.closest('.search').classList.add('active');
+
         item.closest('.header__middle').classList.add('active');
 
     });
@@ -53,8 +57,10 @@ searchMobileOpen.forEach(item=>{
 const searchMobileClose=document.querySelectorAll(".search__button_close");
 searchMobileClose.forEach(item=>{
     item.addEventListener('click',function () {
-        item.closest('.search').classList.remove('active');
+
+
         item.closest('.header__middle').classList.remove('active');
+        item.closest('.search').classList.remove('active');
 
     });
 });
@@ -63,6 +69,7 @@ const burgerOpen=document.querySelectorAll(".burger__open");
 burgerOpen.forEach(item=>{
     item.addEventListener('click',function () {
         item.closest('.header__middle').classList.add('open');
+
         item.closest('.header__mobile').classList.add('open');
     });
 });
@@ -87,7 +94,7 @@ menuClose.forEach(item=>{
 });
 function close(item) {
     item.closest('.header__middle').classList.remove('open');
-    item.closest('.header__middle').classList.remove('close');
+    item.closest('.header__mobile').classList.remove('close');
     item.closest('.header__mobile').classList.remove('open');
 }
 
@@ -96,7 +103,7 @@ burgerClose.forEach(item=>{
     item.addEventListener('click',function () {
 
 
-        item.closest('.header__middle').classList.add('close');
+        item.closest('.header__mobile').classList.add('close');
       //  setTimeout(item.closest('.header__middle').classList.remove('close'),3000);
         setTimeout(close,300,item);
     });
@@ -279,19 +286,11 @@ document.addEventListener("DOMContentLoaded", (function () {
                 nextEl: '.swiper__next',
                 prevEl: '.swiper__prev',
             },
-            breakpoints: {
-                0:{
-                    pagination: {
-                        el: '.swiper__pagination',
-                        clickable: true,
-                    },
+            pagination: {
+                el: '.swiper__pagination',
+                clickable: true,
+            },
 
-                    navigation:false
-                },
-                768:{
-                    pagination: false
-                }
-            }
 
 
         });
