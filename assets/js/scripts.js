@@ -182,9 +182,12 @@ const parametrsValue=document.querySelectorAll(".parametrs__value");
 
 parametrsValue.forEach(item=>{
     item.addEventListener('click',function () {
+        item.closest('.parametrs__column').classList.remove('open');
         const par=item.closest('.parametrs__column');
+
             par.querySelectorAll('.parametrs__current').forEach(e =>{
                 e.textContent=item.innerHTML;
+
             })
     });
 });
@@ -259,7 +262,7 @@ realInput.forEach(item=>{
         const span=item.closest('.form__file').querySelectorAll('.file__text');
 
         span.forEach(e=>{
-            e.textContent=fileName || 'Ваш макет';
+            e.textContent=fileName || 'Ваш макет (при наличии)';
         });
 
     });
@@ -297,16 +300,18 @@ document.addEventListener("DOMContentLoaded", (function () {
         new Swiper(".our__slider", {
 
 
-            spaceBetween: 24,
-            slidesPerView: "auto",
+            spaceBetween: 16,
+            slidesPerView: 'auto',
 
-           slidesPerGroup:3,
+slidesPerGroup:3,
 
             grid: {
                 rows: 2,
-                fill: "row",
+                fill:'row',
+
             },
             loop: false,
+
             navigation: {
                 nextEl: '.swiper__next',
                 prevEl: '.swiper__prev',
@@ -326,11 +331,12 @@ document.addEventListener("DOMContentLoaded", (function () {
 
                     grid: {
                         rows: 2,
-                        fill: "row",
+                        fill:'row',
                     },
-                    slidesPerGroup:3,
 
-                }
+
+                },
+
             }
 
 
@@ -339,7 +345,7 @@ document.addEventListener("DOMContentLoaded", (function () {
         });
         new Swiper(".examples__slider", {
 
-            loop: true,
+            loop: false,
             spaceBetween: 24,
             slidesPerView: "auto",
             navigation: {
