@@ -237,6 +237,7 @@ button{
     width: 100%;
     z-index: 99;
     background: #fff;
+    box-shadow: 0px 4px 12px 0px rgba(4, 0, 76, 0.06);
 }
 
 .header_fixed .header__bottom{
