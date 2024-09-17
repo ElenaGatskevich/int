@@ -473,6 +473,7 @@ background: #fff;
 }
 .header__bottom{
 padding: 11px 0;
+    background: #fff;
     border-top: 1px solid var(--bg1_color);
     box-shadow: 0px 4px 12px 0px rgba(4, 0, 76, 0.06);
 
