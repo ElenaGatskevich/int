@@ -131,7 +131,7 @@ child.forEach(item=>{
       
            setTimeout(() => {
  item.classList.remove('open');
-}, 5000);
+}, 1500);
     });
 });
 
