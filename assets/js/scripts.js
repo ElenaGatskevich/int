@@ -128,7 +128,7 @@ child.forEach(item=>{
         item.classList.add('open');
     });
     item.addEventListener('mouseout', function() {
-        setTimeout(item.classList.remove('open'),3000);
+        setTimeout(item.classList.remove('open1'),3000);
     });
 });
 
