@@ -128,7 +128,7 @@ child.forEach(item=>{
         item.classList.add('open');
     });
     item.addEventListener('mouseout', function() {
-      const child_right=item.querySelector('.child-menu__info child-info');
+      const child_right=item.querySelector('.child-menu__info');
            child_right.forEach(item2=>{
            item2.addEventListener('mouseover', function() {
 
