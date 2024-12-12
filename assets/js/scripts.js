@@ -116,6 +116,7 @@ parent.forEach(item=>{
       item.classList.add('open');
     });
     item.addEventListener('mouseout', function() {
+           console.log('111');
            setTimeout(item.classList.remove('open'),500);
     });
 });
