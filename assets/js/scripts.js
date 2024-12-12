@@ -129,7 +129,7 @@ child.forEach(item=>{
     });
     item.addEventListener('mouseout', function() {
       const child_right=item.querySelector('.child-menu__info child-info');
-           child.forEach(item2=>{
+           child_right.forEach(item2=>{
            item2.addEventListener('mouseover', function() {
 
         setTimeout(() => {
