@@ -128,7 +128,13 @@ child.forEach(item=>{
         item.classList.add('open');
     });
     item.addEventListener('mouseout', function() {
-      
+      const child_right=item.find('.child-menu__info child-info');
+           child_right.addEventListener('mouseover', function() {
+
+        setTimeout(() => {
+ item.classList.add('open');
+}, 1500);
+    });
            setTimeout(() => {
  item.classList.remove('open');
 }, 1500);
