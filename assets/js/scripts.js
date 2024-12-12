@@ -131,7 +131,7 @@ child.forEach(item=>{
      
            setTimeout(() => {
  item.classList.remove('open');
-}, 1500);
+}, 500);
     });
 });
  const child_right=document.querySelectorAll('.child-menu__info');
@@ -140,7 +140,7 @@ child.forEach(item=>{
 
         setTimeout(() => {
  item2.closest('.child-menu__item_parent').classList.add('open');
-}, 1500);
+}, 500);
     });
            });
 const reviewText=document.querySelectorAll(".reviews__text");
