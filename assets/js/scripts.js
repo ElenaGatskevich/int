@@ -128,21 +128,21 @@ child.forEach(item=>{
         item.classList.add('open');
     });
     item.addEventListener('mouseout', function() {
-      const child_right=item.querySelectorAll('.child-menu__info');
-           child_right.forEach(item2=>{
-           item2.addEventListener('mouseover', function() {
-
-        setTimeout(() => {
- item.classList.add('open');
-}, 1500);
-    });
-           });
+     
            setTimeout(() => {
  item.classList.remove('open');
 }, 1500);
     });
 });
+ const child_right=document.querySelectorAll('.child-menu__info');
+           child_right.forEach(item2=>{
+           item2.addEventListener('mouseover', function() {
 
+        setTimeout(() => {
+ item2.closest('.child-menu__item_parent').classList.add('open');
+}, 1500);
+    });
+           });
 const reviewText=document.querySelectorAll(".reviews__text");
 reviewText.forEach(item=>{
     if(item.textContent.length > 230){
